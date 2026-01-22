@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cqsow7bh3dobu"
+path="res://.godot/imported/pickUp.aseprite-ee67d3efc78b0a46b70d19e4f5e6f6c6.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Interactables/pickUp.aseprite"
+dest_files=["res://.godot/imported/pickUp.aseprite-ee67d3efc78b0a46b70d19e4f5e6f6c6.res"]
+
+[params]
+

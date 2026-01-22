@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=4 uid="uid://byg0ncdfvsaii"]
+
+[ext_resource type="Script" uid="uid://dgmwutedeef66" path="res://Scripts/boss.gd" id="1_jsado"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ww4xw"]
+_data = PackedByteArray("AAADAAUAAAABAAAAVAAAAEAAAACwAwAAUklGRqgDAABXRUJQVlA4TJwDAAAvU8APEFegtm0bNmYn2XpR27YNm3NJGZ05ittGUlPLePy6+Q8AVF6VshZWwUp1LpDFTb7L/we6z/bJbZwfDcmwVfErqGVSyQPJV5s7lSH89pAqroMZMKlEAyQGKRNhBanyCOCESXV54aM6VhtF/DMpWpq42jKi/w7cRlIkd+8w7MEr6BMgoubzGalnpNeV7z1LWrVGRID3LJXvrXv/W1SrPAI9g1oFj8rSI8CRrKNahbvldOV7jl9plNYyambr6mF2/c2vLSI4XpLVMt21ysfD9Psvvth3RVlRy4xSG1a+qML5gFFmM5llipo6Byofyi+cD2xmVkmKoqZCEk4/fFF+96F0RlYrGcnLNmI8fPgwxc2q5XxULekyMAHwzz8vzPTaVURRanUmR1AV9QNulnzlqhlF63sCtIEkgLl9zez6d27KiJpZG4ApVAgzHS5KciSrqjmqtawE9IRn1y2PXCcjimBsKtOgsrya8XfupA9TpDIAYNTLGTOTc/hoGyUBGJ3J/mtecekM94GRAYzWSuZzHg951XI9xBuFJobJYqXSQ3HOXE5WBMciujQWSZ5L2T64OOz/8W4y2fcdh3cNNHShpIZQol98ZF45uh8lMND5+sl64kL3FswLcpr8OXxrYFQa4EAqIawV5XLI+/Ac6h/bsUYtDoQQ87gQd7MlL1w2/5nDhiaE0cWhEHMri+7fq8mAW059k4awQJ5rbeO4d7EUfHvH1w5+qnnbTpDLVMbVwneHghd85aBomzQAwhiAWEccn4rHAbODGDoNEQKAOajoeP6xK/6rJnxs2f25NblSsAiTEIkotOzNc2ZxN2zQln/d74gzxAZJaGCBQmWHYp6KfveX1Zhooz8Dk4XQCE1VJwEO6tNiPji/5i3/5BKxBUywLizaT8wPL/7tXg9PsLE26/3YC6HWQqDu8jx7/X643LjnsySBaY/2kOSwcYgnaDRPh+8Hi42rfR3Cs5QCbRSpfqoRd/Sb6+FVg2jTDba2DwiNVcUT/cYuxa+WPB5UaFsASJS1qC/hxt5ZfHjIPKTGahsfQCZt8BT3OotDseDyfsrXre0KlQdt+J2ajlhk4m7IzDO63s4rUs8nn6rs80j0f+vdTEpmbp21tvOJal/cGh2Lq+OL6WR5x2Mab7Xp2xWCSYl+V+hydveal2d3W3hEm10eC+4KwbfFgHmxv5FHm3QqZEUthZjviPHG6S1I7NS2CiF2OlVJoqBPpCA=")
+size_override = Vector2(84, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsado"]
+size = Vector2(35, 45)
+
+[sub_resource type="Animation" id="Animation_jsado"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mhtxu"]
+_data = {
+&"default": SubResource("Animation_jsado")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww4xw"]
+size = Vector2(33, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jsado"]
+radius = 97.0052
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_jsado")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_ww4xw")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimPlayer",
+"slice": "",
+"source": "res://Assets/Sprites/Enemies/theCreature.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "2601f3127830ee764f30bc913e9a63ef"
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(-8.5, 2.5)
+shape = SubResource("RectangleShape2D_jsado")
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mhtxu")
+}
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(-41, 4)
+shape = SubResource("RectangleShape2D_ww4xw")
+debug_color = Color(0.644621, 0.333673, 1, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.509
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="PlayerDetection" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_jsado")
+debug_color = Color(0.983799, 0, 0.349647, 0.42)
+
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bubbeus41ugyy"
+path="res://.godot/imported/theCreature.aseprite-ca4232694f144f1e59ff46b90ad83e34.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Enemies/theCreature.aseprite"
+dest_files=["res://.godot/imported/theCreature.aseprite-ca4232694f144f1e59ff46b90ad83e34.res"]
+
+[params]
+

@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=4 uid="uid://c28t5ae4sykt4"]
+
+[ext_resource type="Script" uid="uid://cjeqnrxf28nf6" path="res://Scripts/powerup.gd" id="1_8rhvw"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ud7x8"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAIAAAAAABQAAUklGRvgEAABXRUJQVlA4TOwEAAAvv8AfEN/joI0kR/Jl/jpmRyL/UygasCNJclTlHF9gPzZgFyZo9cSW20iSpCjbFvz3CjSQEO8pB5EkSUr2fRZwgH8N+EECVAAuXLhw4Tg+79f3Yzt+PxaBEjaHX/+AhBSEIEgEJLDIMGhmGJOBGcwMm2F9+pWCECgIgoQQghgyRjRLzBAJEphFhIwNplCkgGREEsFgGBoLkTJgqow0sMQSg0kkICGG2aaDs5lp7xwMJpDMjjBsYIYhk+7z8/zv9+u8XO/9dOh8AoVb29M20qA8PFNmZmbmOmUmpxiOywy25X9vWbL3+yot70b0H5IAt3EbQOgi54BB1ze8+V8bO5zVfWNz9i4UvDu7sTizC+Xu7rAbkzO7cGTfHSNmgL0j++4YCXGk3h2HOmPszO4lD9YTAnJJd8ejNo53568HXTplHC/y1WXfHbp0bDl619Ls0vGxyL6gOsLuGnlVu8MqpS+V1Be5lNKS8tXtFCeE3TUSsDv69x2o4tNd+QUslBYv6Jsxv+B310jQ7vjfd5C1R/THghy/Ou5mhg2uOPTuGkHf3QMnvt3hZURX7gv9obTu8fEs7Rf07hrB3p2F+HcHV+xcf+JDaeHF3IFfwLtrBH131wu/O3TvTOReFEpLbgy/YHfXCPruLHi7r42KVXcZR9hdI+i7s+DtHo10t//8/sn19PlXTlHr8inC7hrB3p0FcXfzcL297WsT05cfucWl+0kJd2dC3N1c6r8trvnF1NiQU36+ZSpjd7ji6b7n8to8ptzqzvEj/u+WzLvDgw9MVFVWMOU93g8bvGTeHV7xrN7zcOfS3pKy1U3BPz7y7w4Kbhp69GpoufdlcVOELf/uwMfcOUlPHm/ETEFrBewOeUQWllbA7pAnZGTdHYvcsgTMFlda6t0xyG3b4mzb/tJy745B7jg2Z8fxlZZ/dwx2ZsGN9LvjW/rd8a3e3d8FGl4fAg2ujyGMcYN48SG0wZ8hPnoX2oBBPh9/k9Uv5X+i+Jco3//7rz/ncjgrmtvra3P2qiuYm5W2OLPqyuV2WGmTM6vuyM8NX9sMsFdcfm742iGKy88NXjtj7MzuJQ/WE4Li8nMD1zaOd+evB4cmp4zjRb64/NywX7TYcvSupdml42ORfQG5/NyQSulLJfVF+S7tLSlf3U5xvVXKHZ/uyi9ocCmlJcUL+mZMFdyQX7YR/bEgx6XMHXczwwYHjsFNXhk34E9NdOW+kNO3usfHs7S/NwY3IXJyx871pxKX+v2r8GLuAIWbEzo3ISjcmch9LR9Kc0puDDRuQihF4+aDw22ujYpCSd1lHIfbLzRuQTwjcEcj3SIR0rp8isDNB49bLAzuw/X2tq9NrqcvP3KLS/eTSNzEEzI3IVjc5lL/bXHNL6bGhpzy8y0TiVsjFJnbUyA3XPF033N5bR5TbnXn+BFfG5zbEzK3pyBuSPCBiarKCk8k7/Fe9GcTnFujFJmbCYvbjGf1ngeXElJStrpponF7QuZmCuAGLW4aevRKI70vi5sCbHhuT6+NG7i4uXOSnjzeiImoEbhd+sq4QYuLLKotPzds8VC15eeGLm5ZgtKWr7b83ODFbdvibNustvzc8MUdx+bsOF5t6blx7DBzpSXnfg3G5v5Lxu8DjaB3AcbRW4Hhn4U2/A3uxdtAAwf/vAtp4ISw+qX8T1T/kn+x+Q0=")
+size_override = Vector2(192, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ud7x8"]
+radius = 16.0312
+
+[sub_resource type="Animation" id="Animation_8rhvw"]
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_313d8"]
+_data = {
+&"Idle": SubResource("Animation_8rhvw")
+}
+
+[node name="powerup" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_8rhvw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_ud7x8")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "anim",
+"slice": "",
+"source": "res://Assets/Sprites/Interactables/pickUp.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "677cbdb5cecc05f7d388508ef0cd299c"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ud7x8")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_313d8")
+}
+autoplay = "Idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
